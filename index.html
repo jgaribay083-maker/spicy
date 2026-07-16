@@ -110,6 +110,31 @@
   .wa-float svg{width:34px;height:34px;fill:#fff}
   @keyframes pulse{0%,100%{box-shadow:0 12px 30px rgba(37,211,102,.45)}50%{box-shadow:0 12px 30px rgba(37,211,102,.45),0 0 0 16px rgba(37,211,102,.12)}}
 
+  /* ============ PEDIDOS EN LÍNEA ============ */
+  .order-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .prod{background:#fff;border:1.5px solid var(--pink-soft);border-radius:22px;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 10px 24px rgba(43,29,29,.05);transition:border-color .3s,transform .3s,box-shadow .3s}
+  .prod.active{border-color:var(--red);transform:translateY(-3px);box-shadow:0 14px 30px rgba(200,16,46,.14)}
+  .prod .info .nm{font-family:'Dancing Script';font-size:1.5rem;font-weight:700;line-height:1.15}
+  .prod .info .pr{color:var(--red);font-weight:600;font-size:1.05rem;margin-top:2px}
+  .stepper{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .stepper button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--pink);background:#fff;color:var(--red);font-size:1.3rem;font-weight:600;cursor:pointer;transition:all .2s;line-height:1}
+  .stepper button:hover{background:var(--red);border-color:var(--red);color:#fff;transform:scale(1.12)}
+  .stepper .qty{min-width:24px;text-align:center;font-weight:600;font-size:1.15rem}
+  .order-sub{font-family:'Dancing Script';font-size:2.1rem;font-weight:700;margin:44px 0 18px;text-align:center}
+  .spice-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+  .spice{padding:12px 24px;border-radius:40px;border:1.5px solid var(--pink);background:#fff;cursor:pointer;font-family:'Jost',sans-serif;font-size:.95rem;font-weight:500;letter-spacing:.5px;color:var(--ink);transition:all .25s}
+  .spice.sel{background:var(--red);color:#fff;border-color:var(--red);transform:scale(1.06);box-shadow:0 10px 24px rgba(200,16,46,.28)}
+  .order-notes{width:100%;max-width:560px;display:block;margin:0 auto;background:#fff;border:1.5px solid var(--pink-soft);border-radius:18px;padding:16px 20px;font-family:'Jost',sans-serif;font-size:1rem;color:var(--ink);resize:vertical;min-height:84px;outline:none;transition:border-color .3s}
+  .order-notes:focus{border-color:var(--red)}
+  .cart-bar{position:fixed;left:50%;bottom:22px;transform:translate(-50%,160%);z-index:55;background:var(--ink);color:var(--cream);display:flex;align-items:center;gap:16px;padding:12px 14px 12px 26px;border-radius:60px;box-shadow:0 18px 44px rgba(43,29,29,.4);transition:transform .45s cubic-bezier(.2,.8,.3,1);max-width:calc(100vw - 130px)}
+  .cart-bar.show{transform:translate(-50%,0)}
+  .cart-bar .tot{font-weight:500;letter-spacing:1px;white-space:nowrap;font-size:.95rem}
+  .cart-bar .tot b{font-family:'Dancing Script';font-size:1.45rem;color:var(--pink);margin-right:2px}
+  .cart-bar button{background:linear-gradient(135deg,#25D366,#1eab52);color:#fff;border:none;font-family:'Jost',sans-serif;font-weight:600;font-size:.92rem;letter-spacing:1px;padding:13px 22px;border-radius:40px;cursor:pointer;transition:transform .25s;white-space:nowrap}
+  .cart-bar button:hover{transform:scale(1.06)}
+  .wa-link{margin-top:16px;display:inline-block;color:var(--red);font-weight:500;letter-spacing:1px;text-decoration:none;border-bottom:1.5px dashed var(--pink);padding-bottom:2px;font-size:.95rem}
+  .wa-link:hover{border-bottom-style:solid}
+
   /* reveal on scroll */
   .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.3,1)}
   .reveal.visible{opacity:1;transform:none}
@@ -163,10 +188,9 @@
   <h1 class="script reveal visible">Condimentado, sabroso,<br><em>picoso y enchilado</em> 🌶️</h1>
   <p class="sub">Gomitas enchiladas artesanales · Frascos y charolas</p>
 
-  <a class="cta" href="https://wa.me/526361283719?text=Hola%20Spicy!%20Quiero%20hacer%20un%20pedido%20de%20gomitas%20%F0%9F%8E%80%F0%9F%8C%B6%EF%B8%8F" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.7 1.2 2 2.8 3.5 4.9 4.4 1.7.7 2.4.6 3.2.4.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3z"/></svg>
-    PEDIR POR WHATSAPP
-  </a>
+  <a class="cta" href="#pedido">🛍️ ARMA TU PEDIDO EN LÍNEA</a>
+  <br>
+  <a class="wa-link" href="https://wa.me/526361283719?text=Hola%20Spicy!%20Quiero%20hacer%20un%20pedido%20de%20gomitas%20%F0%9F%8E%80%F0%9F%8C%B6%EF%B8%8F" target="_blank" rel="noopener">o escríbenos directo por WhatsApp →</a>
   <p class="mini">✓ Entrega local &nbsp;·&nbsp; ✓ Efectivo o transferencia &nbsp;·&nbsp; ✓ Pedidos personalizados</p>
   <div class="chev">▼</div>
 </header>
@@ -269,6 +293,34 @@
   </div>
 </section>
 
+<!-- ============ PEDIDOS EN LÍNEA ============ -->
+<section id="pedido">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">— Pedidos en línea —</div>
+      <h2>Arma tu pedido</h2>
+      <svg class="under" viewBox="0 0 100 80"><use href="#bow" color="#C8102E"/></svg>
+      <p>Escoge, suma y envía — llega armado a nuestro WhatsApp</p>
+    </div>
+
+    <h3 class="order-sub script reveal">Frascos 500 g 🫙</h3>
+    <div class="order-grid reveal" id="grid-frascos"></div>
+
+    <h3 class="order-sub script reveal">Charolas 🎀</h3>
+    <div class="order-grid reveal" id="grid-charolas"></div>
+
+    <h3 class="order-sub script reveal">¿Qué tan picoso lo quieres? 🌶️</h3>
+    <div class="spice-row reveal" id="spice-row">
+      <button class="spice sel" data-v="Suave 🌶️">Suave 🌶️</button>
+      <button class="spice" data-v="Medio 🌶️🌶️">Medio 🌶️🌶️</button>
+      <button class="spice" data-v="Bien enchilado 🌶️🌶️🌶️">Bien enchilado 🌶️🌶️🌶️</button>
+    </div>
+
+    <h3 class="order-sub script reveal">Notas de tu pedido 📝</h3>
+    <textarea class="order-notes reveal" id="order-notes" placeholder="Ej. personalizar frasco con skittles y picagomas, entregar el viernes, a nombre de..."></textarea>
+  </div>
+</section>
+
 <!-- ============ CTA PERSONALIZA ============ -->
 <section>
   <div class="wrap" style="padding-top:20px">
@@ -291,6 +343,12 @@
   <div class="tag">Condimentado · Sabroso · Picoso · Enchilado</div>
   <div class="tel"><a href="https://wa.me/526361283719">636 128 3719</a></div>
 </footer>
+
+<!-- barra de carrito -->
+<div class="cart-bar" id="cart-bar">
+  <span class="tot" id="cart-tot"><b>0</b> artículos · $0</span>
+  <button id="send-order">ENVIAR PEDIDO 💬</button>
+</div>
 
 <!-- WhatsApp flotante -->
 <a class="wa-float" href="https://wa.me/526361283719?text=Hola%20Spicy!%20Quiero%20hacer%20un%20pedido%20de%20gomitas%20%F0%9F%8E%80%F0%9F%8C%B6%EF%B8%8F" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
@@ -336,6 +394,79 @@
     sp.style.top = (e.clientY + (Math.random() * 16 - 8)) + 'px';
     document.body.appendChild(sp);
     setTimeout(() => sp.remove(), 1000);
+  });
+
+  // ============ pedidos en línea ============
+  // [nombre en pantalla, nombre en el mensaje de WhatsApp, precio]
+  const FRASCOS = [
+    ['Clásica', 'Frasco Clásica (500g)', 75],
+    ['Mix', 'Frasco Mix (500g)', 55],
+    ['Skittles', 'Frasco Skittles (500g)', 175],
+    ['Aritos con Lucas', 'Frasco de aritos con Lucas (500g)', 105],
+    ['Rollitos (6 pzas)', 'Paquete de rollitos (6 pzas)', 120]
+  ];
+  const CHAROLAS = [
+    ['Clásica', 'Charola Clásica', 140],
+    ['Extra de Skittles', 'Charola Extra de Skittles', 180],
+    ['Picagoma Enchilada', 'Charola Picagoma Enchilada', 160],
+    ['Chamoy Mix', 'Charola Chamoy Mix', 175],
+    ['Premium', 'Charola Premium', 320]
+  ];
+  const cart = {};
+
+  function renderProds(list, box) {
+    list.forEach(([display, name, price]) => {
+      const d = document.createElement('div');
+      d.className = 'prod';
+      d.innerHTML = `<div class="info"><div class="nm">${display}</div><div class="pr">$${price}</div></div>
+        <div class="stepper"><button type="button" aria-label="quitar ${name}">−</button><span class="qty">0</span><button type="button" aria-label="agregar ${name}">+</button></div>`;
+      const [minus, plus] = d.querySelectorAll('button');
+      const qtyEl = d.querySelector('.qty');
+      cart[name] = { qty: 0, price };
+      const paint = () => {
+        qtyEl.textContent = cart[name].qty;
+        d.classList.toggle('active', cart[name].qty > 0);
+        updateBar();
+      };
+      minus.addEventListener('click', () => { if (cart[name].qty > 0) cart[name].qty--; paint(); });
+      plus.addEventListener('click', () => { cart[name].qty++; paint(); });
+      box.appendChild(d);
+    });
+  }
+  renderProds(FRASCOS, document.getElementById('grid-frascos'));
+  renderProds(CHAROLAS, document.getElementById('grid-charolas'));
+
+  const bar = document.getElementById('cart-bar');
+  const tot = document.getElementById('cart-tot');
+  function updateBar() {
+    let n = 0, t = 0;
+    for (const k in cart) { n += cart[k].qty; t += cart[k].qty * cart[k].price; }
+    tot.innerHTML = `<b>${n}</b> artículo${n === 1 ? '' : 's'} · $${t}`;
+    bar.classList.toggle('show', n > 0);
+  }
+
+  document.querySelectorAll('#spice-row .spice').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#spice-row .spice').forEach(x => x.classList.remove('sel'));
+      b.classList.add('sel');
+    });
+  });
+
+  document.getElementById('send-order').addEventListener('click', () => {
+    const lines = [];
+    let t = 0;
+    for (const k in cart) {
+      if (cart[k].qty > 0) {
+        lines.push(`• ${cart[k].qty}x ${k} — $${cart[k].qty * cart[k].price}`);
+        t += cart[k].qty * cart[k].price;
+      }
+    }
+    if (!lines.length) return;
+    const spice = document.querySelector('#spice-row .spice.sel').dataset.v;
+    const notes = document.getElementById('order-notes').value.trim();
+    let msg = `Hola Spicy! \u{1F380} Quiero hacer este pedido:\n\n${lines.join('\n')}\n\nNivel de picante: ${spice}\nTotal: $${t}`;
+    if (notes) msg += `\nNotas: ${notes}`;
+    window.open('https://wa.me/526361283719?text=' + encodeURIComponent(msg), '_blank');
   });
 </script>
 </body>
